@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/portalListFragment">
+
+    <fragment
+        android:id="@+id/portalListFragment"
+        android:name="nl.hva.madlevel3.features.presentation.portallist.PortalListFragment"
+        android:label="PortalListFragment"
+        tools:layout="@layout/fragment_portal_list">
+        <action
+            android:id="@+id/action_portalListFragment_to_addPortalFragment"
+            app:destination="@id/addPortalFragment"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_portalListFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPortalFragment"
+        android:name="nl.hva.madlevel3.features.presentation.addportal.AddPortalFragment"
+        android:label="AddPortalFragment"
+        tools:layout="@layout/fragment_add_portal" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="nl.hva.madlevel3.features.presentation.webview.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>
